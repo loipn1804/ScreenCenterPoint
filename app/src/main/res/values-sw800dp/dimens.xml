@@ -1,0 +1,33 @@
+<resources>
+    <dimen name="txt_8sp">16sp</dimen>
+    <dimen name="txt_12sp">18sp</dimen>
+    <dimen name="txt_15sp">21sp</dimen>
+    <dimen name="txt_18sp">24sp</dimen>
+    <dimen name="txt_22sp">28sp</dimen>
+    <dimen name="txt_26sp">32sp</dimen>
+    <dimen name="txt_32sp">38sp</dimen>
+    <dimen name="txt_title">26sp</dimen>
+
+    <dimen name="dm_1dp">2dp</dimen>
+    <dimen name="dm_2dp">4dp</dimen>
+    <dimen name="dm_3dp">6dp</dimen>
+    <dimen name="dm_4dp">8dp</dimen>
+    <dimen name="dm_5dp">10dp</dimen>
+    <dimen name="dm_6dp">14dp</dimen>
+    <dimen name="dm_10dp">20dp</dimen>
+    <dimen name="dm_12dp">24dp</dimen>
+    <dimen name="dm_20dp">40dp</dimen>
+    <dimen name="dm_30dp">60dp</dimen>
+    <dimen name="dm_40dp">80dp</dimen>
+    <dimen name="dm_50dp">100dp</dimen>
+    <dimen name="dm_60dp">120dp</dimen>
+    <dimen name="dm_70dp">140dp</dimen>
+    <dimen name="dm_80dp">160dp</dimen>
+
+    <dimen name="actionbar_height">80dp</dimen>
+    <dimen name="actionbar_ic_size">44dp</dimen>
+    <dimen name="btn_height">80dp</dimen>
+    <dimen name="edt_height">80dp</dimen>
+    <dimen name="home_tab_ic_size">28dp</dimen>
+    <dimen name="one_per_three">250dp</dimen>
+</resources>
