@@ -1,9 +1,12 @@
 package loi.centerpoint;
 
+import android.app.ActivityManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -205,13 +208,25 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        boolean is_first = preferences.getBoolean("is_first", true);
-        if (is_first) {
+        setUpService();
+    }
+
+    private void setUpService() {
+        Log.e("LIO", "isForegroundServiceRunning " + isForegroundServiceRunning(MyService.class));
+        if (!isForegroundServiceRunning(MyService.class)) {
             Intent intent = new Intent(this, MyService.class);
             startService(intent);
-            editor.putBoolean("is_first", false);
-            editor.commit();
         }
+    }
+
+    private boolean isForegroundServiceRunning(Class<?> serviceClass) {
+        ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+        for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
+            if (serviceClass.getName().equals(service.service.getClassName())) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private void touchSample() {
