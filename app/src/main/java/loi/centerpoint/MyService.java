@@ -36,6 +36,8 @@ public class MyService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 
+        Log.e("LIO", "currentThread " + Thread.currentThread().getId() + "-" + Thread.currentThread().getName());
+
         handler = new Handler() {
 
             @Override
@@ -74,7 +76,7 @@ public class MyService extends Service {
 
 //        Log.e("service", "service onStartCommand");
 
-        return Service.START_STICKY;
+        return Service.START_REDELIVER_INTENT;
     }
 
     private void sendMessage(String msg) {
@@ -103,6 +105,7 @@ public class MyService extends Service {
     }
 
     private void doIt() {
+        Log.e("LIO", "doIt " + Thread.currentThread().getId() + "-" + Thread.currentThread().getName());
 //        Log.e("service", "service doit");
         SharedPreferences preferences = getSharedPreferences("screen", MODE_PRIVATE);
         boolean is_show = preferences.getBoolean("is_show", false);
